@@ -1,5 +1,5 @@
 {-# OPTIONS_GHC -F -pgmF htfpp #-}
-module MyPkg.A (funA, htf_thisModulesTests) where
+module Tests.Asserts (funA, htf_thisModulesTests) where
 
 import Test.Framework
 
