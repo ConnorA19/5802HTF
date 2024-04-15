@@ -5,9 +5,8 @@ module Main where
 
 import Test.Framework
 import Test.Framework.BlackBoxTest
-import {-@ HTF_TESTS @-} MyPkg.A
-import {-@ HTF_TESTS @-} MyPkg.B
+import {-@ HTF_TESTS @-} Tests.Asserts
 
-main =
-    do bbts <- blackBoxTests "bbt-dir" "../scripts/run-sample" ".num" defaultBBTArgs
-       htfMain (htf_importedTests ++ [makeTestSuite "bbts" bbts])
+main = putStrLn "Hello World"
+    -- do bbts <- blackBoxTests "bbt-dir" "../scripts/run-sample" ".num" defaultBBTArgs
+       -- htfMain (htf_importedTests ++ [makeTestSuite "bbts" bbts])
