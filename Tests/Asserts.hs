@@ -1,11 +1,9 @@
 {-# OPTIONS_GHC -F -pgmF htfpp #-}
-module Tests.Asserts (asserts, htf_thisModulesTests) where
+module Tests.Asserts (vectorVal, htf_thisModulesTests) where
 
 import Tests.MatrixAdder
 import Test.Framework
 
-vector = vectorMaker 100
+vectorVal = vectorMaker 100
 
-asserts :: Int
-asserts = 1
-
+test_vector1 = assertEqual (head vectorVal) 1
