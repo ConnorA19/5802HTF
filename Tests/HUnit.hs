@@ -1,9 +1,14 @@
 {-# OPTIONS_GHC -F -pgmF htfpp #-}
-module Tests.HUnit (vectorVal, htf_thisModulesTests) where
+module Tests.HUnit (test_Asserts, htf_thisModulesTests) where
 
 import Tests.MatrixAdder
 import Test.Framework
+import Test.Framework.TestInterface
 
 vectorVal = vectorMaker 100
 
-test_vector1 = assertEqual (head vectorVal) 1
+test_Asserts :: Assertion
+test_Asserts = do
+    assertEqual (head vectorVal) 1
+    assertEqual (head vectorVal) 2
+    assertBool ((head vectorVal) == 1)

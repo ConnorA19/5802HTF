@@ -7,6 +7,8 @@ import Test.Framework
 import Test.Framework.BlackBoxTest
 import {-@ HTF_TESTS @-} Tests.HUnit
 
-main = putStrLn "Hello World"
+main :: IO ()
+main = htfMain htf_importedTests
     -- do bbts <- blackBoxTests "bbt-dir" "../scripts/run-sample" ".num" defaultBBTArgs
        -- htfMain (htf_importedTests ++ [makeTestSuite "bbts" bbts])
+
