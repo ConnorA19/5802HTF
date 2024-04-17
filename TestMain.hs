@@ -5,7 +5,7 @@ module Main where
 
 import Test.Framework
 import Test.Framework.BlackBoxTest
-import {-@ HTF_TESTS @-} Tests.Asserts
+import {-@ HTF_TESTS @-} Tests.HUnit
 
 main = putStrLn "Hello World"
     -- do bbts <- blackBoxTests "bbt-dir" "../scripts/run-sample" ".num" defaultBBTArgs

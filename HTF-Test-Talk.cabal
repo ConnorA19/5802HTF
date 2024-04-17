@@ -16,10 +16,18 @@ cabal-version:       >=1.10
 --   default-language:  Haskell2010
 --   build-tool-depends: HTF:htfpp
 
-test-suite HUnit
+test-suite Main
   type:              exitcode-stdio-1.0
   main-is:           TestMain.hs
-  other-modules:     Tests.HUnit, Tests.MatrixAdder
+  other-modules:     Tests.HUnit,Tests.BBT Tests.MatrixAdder
   build-depends:     base, HTF, JuicyPixels,vector
   default-language:  Haskell2010
   build-tool-depends: HTF:htfpp
+
+-- test-suite BBT
+--   type:              exitcode-stdio-1.0
+--   main-is:           Tests/BBT.hs
+--   other-modules:     Tests.MatrixAdder
+--   build-depends:     base, HTF, JuicyPixels,vector
+--   default-language:  Haskell2010
+--   build-tool-depends: HTF:htfpp
