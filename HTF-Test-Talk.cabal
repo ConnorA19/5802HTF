@@ -16,7 +16,7 @@ cabal-version:       >=1.10
 --   default-language:  Haskell2010
 --   build-tool-depends: HTF:htfpp
 
-test-suite sample-tests
+test-suite Asserts
   type:              exitcode-stdio-1.0
   main-is:           TestMain.hs
   other-modules:     Tests.Asserts, Tests.MatrixAdder
