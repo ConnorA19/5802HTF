@@ -10,5 +10,8 @@ vectorVal = vectorMaker 100
 test_Asserts :: Assertion
 test_Asserts = do
     assertEqual (head vectorVal) 1
-    assertEqual (head vectorVal) 2
     assertBool ((head vectorVal) == 1)
+
+    --Should Fail
+    assertEqual (head vectorVal) 1
+
