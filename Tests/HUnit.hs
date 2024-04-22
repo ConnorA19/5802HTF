@@ -4,22 +4,9 @@ module Tests.HUnit (htf_thisModulesTests) where
 import Tests.MatrixAdder
 import Test.Framework
 import Test.Framework.TestInterface
+import Test.Framework.Pretty
 
 vectorVal = vectorMaker 100
-
--- test_Asserts :: Assertion
--- test_Asserts = do
-    --Should Pass
-    
-    
-    --Should Fail
-    -- assertEqual (head vectorVal) 2
-    -- assertBool ((head vectorVal) == 2)
-    -- assertNotEqual(head vectorVal) 1
-    -- assertListsEqualAsSets vectorVal [div (x * (x)) 2 | x <- [1..100]] 
-    -- assertNotEmpty []
-    -- assertEmpty vectorVal
-    -- assertElem 2 vectorVal
 
 test_AssertEqual = do
     assertEqual (head vectorVal) 1
@@ -33,16 +20,49 @@ test_AssertNotEqual = do
 test_AssertListsEqualAsSets = do
     assertListsEqualAsSets vectorVal [div (x * (x+1)) 2 | x <- [1..100]] 
 
-test_assertNotEmpty = do
+test_AssertNotEmpty = do
     assertNotEmpty vectorVal
 
 test_AssertEmpty = do
     assertEmpty []
 
-test_assertElem = do
+test_AssertElem = do
     assertElem 10 vectorVal
 
-test_assertThrowsSome = do
+test_AssertThrowsSome = do
     assertThrowsSome (div 1 0)
--- test_AssertPretty = do
-    -- assertEqualPretty (1 == 1)
+
+test_AssertEqualFail = do
+    assertEqual (head vectorVal) 2
+
+test_AssertBoolFail = do
+    assertBool ((head vectorVal) == 2)
+
+test_AssertNotEqualFail = do
+    assertNotEqual(head vectorVal) 1
+
+test_AssertListsEqualAsSetsFail = do
+    assertListsEqualAsSets vectorVal [div (x * (x)) 2 | x <- [1..100]] 
+
+test_AssertNotEmptyFail = do
+    assertNotEmpty []
+
+test_AssertEmptyFail = do
+    assertEmpty vectorVal
+
+test_AssertElemFail = do
+    assertElem 2 vectorVal
+
+test_AssertThrowsSomeFail = do
+    assertThrowsSome (div 1 1)
+
+test_AssertEqualPretty = do
+    assertEqualPretty (2 :: Int) (2 :: Int)
+
+test_AssertVerbose = do
+    assertEqualVerbose "Fail 2 == 2" 2 2
+
+test_AssertVerboseFail = do
+    assertEqualVerbose "1 does not equal 2" 1 2
+
+    
