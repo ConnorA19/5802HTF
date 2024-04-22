@@ -4,7 +4,6 @@ module Tests.HUnit (htf_thisModulesTests) where
 import Tests.MatrixAdder
 import Test.Framework
 import Test.Framework.TestInterface
-import Test.Framework.Pretty
 
 vectorVal = vectorMaker 100
 
