@@ -26,7 +26,7 @@ main =
           do s <- readFile file
              case reads s of
                [(n, "")] ->
-                   do putStrLn $ show (vectorMaker n)
+                   do putStrLn (show (vectorMaker n))
                       exitWith ExitSuccess
                _ -> do hPutStrLn stderr "invalid input"
                        exitWith (ExitFailure 1)

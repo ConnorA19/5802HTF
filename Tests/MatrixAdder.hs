@@ -1,5 +1,5 @@
 {-# OPTIONS_GHC -F -pgmF htfpp #-}
-module Tests.MatrixAdder (vectorMaker, htf_thisModulesTests) where
+module Tests.MatrixAdder (vectorMaker) where
 
 import Test.Framework
 

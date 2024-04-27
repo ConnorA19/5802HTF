@@ -19,7 +19,7 @@ cabal-version:       >=1.10
 test-suite Main
   type:              exitcode-stdio-1.0
   main-is:           TestMain.hs
-  other-modules:     Tests.HUnit,Tests.BBT Tests.MatrixAdder
+  other-modules:     Tests.MatrixAdder
   build-depends:     base, HTF, vector
   default-language:  Haskell2010
   build-tool-depends: HTF:htfpp
