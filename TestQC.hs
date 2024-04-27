@@ -5,7 +5,7 @@ module Main where
 
 import Test.Framework
 import Test.Framework.BlackBoxTest
-import {-@ HTF_TESTS @-} Tests.HUnit
+import {-@ HTF_TESTS @-} Tests.QC
 
 main :: IO ()
 main = htfMain htf_importedTests
