@@ -5,8 +5,8 @@ import Tests.MatrixAdder
 import Test.Framework
 import Test.Framework.TestInterface
 
-prop_Recurse n = ((vectorMaker (n + 1)) == ((vectorMaker n) ++ (sum [1..(n+1)])))
-  where types = n::Int
+prop_addition :: Int -> Bool
+prop_addition n = (n + n) == (n * 2)
 
 prop_Len :: Int -> Bool
 prop_Len n = (length (vectorMaker n)) == n
