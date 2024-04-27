@@ -8,5 +8,5 @@ import Test.Framework.TestInterface
 vectorVal = vectorMaker 100
 
 test_AssertEqualPretty = do
-    assertEqualPretty (2 :: Int) (2 :: Int)
+    assertEqualPretty ([[[1,2,3],[1,2,3],[1,2,3]]] :: [[[Int]]]) ( [[[1]]]:: [[[Int]]])
 

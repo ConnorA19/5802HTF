@@ -32,6 +32,14 @@ test-suite HUnit
   default-language:  Haskell2010
   build-tool-depends: HTF:htfpp
 
+test-suite HUnitPretty
+  type:              exitcode-stdio-1.0
+  main-is:           TestHunitPretty.hs
+  other-modules:     Tests.HUnitPretty,Tests.MatrixAdder
+  build-depends:     base, HTF,vector
+  default-language:  Haskell2010
+  build-tool-depends: HTF:htfpp
+
 test-suite BBT
   type:              exitcode-stdio-1.0
   main-is:           TestBBT.hs
