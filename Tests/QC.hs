@@ -1,5 +1,5 @@
 {-# OPTIONS_GHC -F -pgmF htfpp #-}
-module Tests.HUnit (, htf_thisModulesTests) where
+module Tests.HUnit (htf_thisModulesTests) where
 
 import Tests.MatrixAdder
 import Test.Framework
