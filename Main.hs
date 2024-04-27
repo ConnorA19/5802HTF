@@ -11,6 +11,11 @@ import System.Environment (getArgs)
 import System.Exit
 import System.IO
 
+isNumeric :: String -> Bool
+isNumeric str = case reads str :: [(Double, String)] of
+               [(_, "")] -> True
+               _         -> False
+
 main =
     do args <- getArgs
        case args of
@@ -24,10 +29,10 @@ main =
              exitWith (ExitFailure 1)
       doWork file =
           do s <- readFile file
-             case reads s of
-               [(n, "")] ->
-                   do putStrLn (show (vectorMaker n))
-                      exitWith ExitSuccess
-               _ -> do hPutStrLn stderr "invalid input"
+             r = reads s
+             if isNumeric r
+               then do putStrLn (show (vectorMaker n))
+                       exitWith ExitSuccess
+               else do hPutStrLn stderr "invalid input"
                        exitWith (ExitFailure 1)
 
