@@ -24,9 +24,9 @@ main =
              exitWith (ExitFailure 1)
       doWork file =
           do s <- readFile file
-             case reads s :: [(Double, String)] of
+             case reads s :: [(Int, String)] of
                [(n, "")] -> do putStrLn (show (vectorMaker n))
                                exitWith ExitSuccess
-               _         -> do PutStrLn stderr "invalid input"
+               _         -> do hPutStrLn stderr "invalid input"
                                exitWith (ExitFailure 1)
 
